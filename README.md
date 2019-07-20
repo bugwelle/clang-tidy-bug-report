@@ -60,3 +60,5 @@ void fct(Element& elem) {
     
 }
 ```
+
+Tested with clang-tidy-7 and clang-tidy-8.
