@@ -4,7 +4,7 @@ struct Element {
 };
 
 void fct(Element& elem) {
-    if (elem.a) {
+     != nullptr
         delete elem.a;
-    }
+    
 }

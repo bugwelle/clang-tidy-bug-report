@@ -5,6 +5,7 @@ This repo's only purpose is to show an issue with clang-tidy.
 Just run `./build.sh`. You will get following output:
 
 ```sh
+./build.sh                       
 -- The C compiler identification is GNU 7.4.0
 -- The CXX compiler identification is GNU 7.4.0
 -- Check for working C compiler: /usr/bin/cc
@@ -19,13 +20,6 @@ Just run `./build.sh`. You will get following output:
 -- Detecting CXX compiler ABI info - done
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done
--- Generating done
--- Build files have been written to: /home/andre/Downloads/test/build
-Scanning dependencies of target thisLib
-[ 50%] Building CXX object CMakeFiles/thisLib.dir/test.cpp.o
-[100%] Linking CXX static library libthisLib.a
-[100%] Built target thisLib
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/andre/Downloads/test/build
@@ -51,4 +45,18 @@ Existing replacement: /home/andre/Downloads/test/test.cpp: 71:+12:""
     if (elem.a) {
               ^
 clang-tidy applied 4 of 4 suggested fixes.
+```
+
+The "fixed" output will be:
+
+```cpp
+struct Element {
+    int* a = nullptr;
+};
+
+void fct(Element& elem) {
+     != nullptr
+        delete elem.a;
+    
+}
 ```
