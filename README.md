@@ -1,5 +1,7 @@
 # clang-tidy issue
 
+*Duplicate of https://bugs.llvm.org/show_bug.cgi?id=35811 *
+
 This repo's only purpose is to show an issue with clang-tidy.
 
 Just run `./build.sh`. You will get following output:
